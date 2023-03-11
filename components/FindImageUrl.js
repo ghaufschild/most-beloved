@@ -10,8 +10,8 @@ export default function FindImageUrl() {
 
     useEffect(() => setImage(textArray[randomNumber]), [textArray, randomNumber]);
 
-    var imageUrl = "/images/GA" + randomImage + ".jpg";
-
+    // var imageUrl = "/images/GA" + randomImage + ".jpg";
+    var imageUrl = "/images/Bday.jpg"
     return <Image src={imageUrl} alt="A wonderful time :)" layout={"fill"} objectFit={"cover"}/>
 
 }

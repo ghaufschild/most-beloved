@@ -15,6 +15,14 @@ a {
   box-sizing: border-box;
 }
 
+html {
+  color-scheme: dark;
+}
+body {
+  color:  rgb(163, 118, 46);
+  background: rgb(53, 99, 75);
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
