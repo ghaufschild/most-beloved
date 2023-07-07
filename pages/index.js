@@ -25,7 +25,17 @@ export default function Home() {
       </Head>
 
       <div className="confettie-wrap" ref={confetiRef}>
-      <Confetti numberOfPieces={150} width={width} height={height} />
+      <Confetti numberOfPieces={150} width={width} height={height} drawShape={ctx => {
+        ctx.beginPath()
+        for(let i = 0; i < 22; i++) {
+          const angle = 0.35 * i
+          const x = (0.2 + (1.5 * angle)) * Math.cos(angle)
+          const y = (0.2 + (1.5 * angle)) * Math.sin(angle)
+          ctx.lineTo(x, y)
+        }
+        ctx.stroke()
+        ctx.closePath()
+      }} />
 
       <main className={styles.main}>
         <div className={styles.grid}>
@@ -40,7 +50,7 @@ export default function Home() {
             </p> */}
 
             <p className={styles.description}>
-              Happy Birthday &nbsp;
+              Happy Anniversary &nbsp;
               <code className={styles.code}>Laner!</code>
             </p>
           </div>
