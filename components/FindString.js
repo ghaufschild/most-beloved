@@ -13,6 +13,6 @@ export default function FindString() {
     useEffect(() => setText(textArray[randomNumber]), [textArray, randomNumber]);
 
     // return <p>{randomText}</p>;
-    return <p>Holy shit you&apos;re 26, such a cougar</p>;
+    return <p>Holy shit you&apos;re 27, such a cougar</p>;
 
 }
