@@ -7,6 +7,7 @@ import React, { useState, useRef, useEffect } from "react";
 
 
 export default function Home() {
+  const age = 28
   const [height, setHeight] = useState(null);
   const [width, setWidth] = useState(null);
   const confetiRef = useRef(null);
@@ -50,7 +51,7 @@ export default function Home() {
             </p>
 
             <p className={styles.description}>
-              Happy 27th Birthday &nbsp;
+              Happy {age}th Birthday &nbsp;
               <code className={styles.code}>Laner!</code>
             </p>
           </div>

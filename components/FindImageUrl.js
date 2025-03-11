@@ -1,17 +1,19 @@
-import { useEffect, useState, useMemo } from "react";
-import Image from 'next/image'
+import { useState, useEffect, useMemo } from "react";
+import Image from "next/image";
 
 export default function FindImageUrl() {
-    const [randomImage, setImage] = useState(null)
+    const [randomImage, setImage] = useState(null);
 
-    const textArray = useMemo(() => ["1", "2", "3", "4", "5", "6"], []);
+    const textArray = ["1", "2", "3", "4", "5", "6"];
 
-    var randomNumber = Math.floor(Math.random()*textArray.length);
+    useEffect(() => {
+        const randomNumber = Math.floor(Math.random() * textArray.length);
+        setImage(textArray[randomNumber]);
+    }, []);
 
-    useEffect(() => setImage(textArray[randomNumber]), [textArray, randomNumber]);
-    
-    // var imageUrl = "/images/Bday.jpg"
-    var imageUrl = "/images/Bday" + randomImage + ".jpg";
-    return <Image src={imageUrl} alt="A wonderful time :)" layout={"fill"} objectFit={"cover"}/>
+    if (randomImage === null) return null;
 
+    const imageUrl = `/images/Bday${randomImage}.jpg`;
+
+    return <Image src={imageUrl} alt="A wonderful time :)" fill style={{ objectFit: "cover" }} />;
 }
